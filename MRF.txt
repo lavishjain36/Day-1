@@ -1,0 +1,182 @@
+1.MRF Exercise:
+let numbers = [1,2,3,4,5,6,7,8,9,10];
+
+Write a function to return all array elements * 2
+
+
+2.
+
+var numbers = [1,2,3,4,5,6,7,8];
+
+Write a function to return numbers less than 4
+
+
+
+3.Generate a new array where the date in the array should be in given format
+MM/DD .Output should be the same array as given in the array.
+
+letdays = ['02-21', '05-21', '09-21', '12-21', '11-21', '06-21', '07-21']; 
+
+var day = bdays.map(function(elem) { 
+  return elem.replace('-', '/');
+});
+
+console.log(day); 
+
+
+4.Take a list of element given below & ROund  of each values to higesht value .
+
+var arr = [2.1, 3.16, 1.11, 12.29,11.7,98.6];
+
+var rounded = arr.map(Math.ceil);
+
+console.log(rounded); 
+//[ 3, 4, 2, 13, 12, 99 ]
+
+
+
+5.Take a list of element given below & return all the number greater than 0
+
+var nums = [-8, 2, 9,8,-45, -41, 6,9,-5];
+
+var pos = nums.filter(function(el) {
+  return el > 0;
+});
+
+console.log(pos); 
+
+
+
+
+6.Consider below array of object and filter out all objects in a data file that having  incorrect or undefined values
+
+letdata = [
+  { name: "alam", age: 51 },
+  { name: "Hatem", age: null },
+  { name: "Rajesh", age: undefined },
+  { name: "Jenny", age: 21 },
+  { name: "Pavan", age: 14 },
+  { name: "jerry", age: null },
+  { name: "john", age: 32 },
+  { name: null, age: undefined },
+];
+
+let res = data.filter(function (el) {
+  if (el.name != undefined && el.age != undefined) {
+    return true;
+  } else {
+    return false;
+  }
+});
+
+console.log(res);
+
+
+
+
+7.Get the cities having population >9000000
+let indian_cities = [
+  { name: "Mumbai", population: 12691836 },
+  { name: "Delhi", population: 10927986 },
+  { name: "Bengaluru", population: 5104047 },
+  { name: "Kolkata	", population: 4631392 },
+  { name: "Chennai", population: 4328063 },
+  { name: "Pune", population: 2935744 },
+];
+let bigCities = [];
+for (let i = 0; i < indian_cities.length; i++) {
+  if (indian_cities[i].population > 9000000) {
+    bigCities.push(indian_cities[i]);
+  }
+}
+console.log(bigCities);
+
+
+
+
+let bigCities = indian_cities.filter(function (e) {
+  return e.population > 9000000;
+});
+console.log(bigCities);
+
+
+
+
+let bigCities = cities.filter(city => city.population > 3000000);
+console.log(bigCities);
+
+
+
+
+1.Create an Array of object for Amazon shopping cart which should contain below details
+1.Product Name
+2.Quantity:
+3.Price
+4.Location:
+
+You have 5 set of item
+1.Electronic item =>1
+2.Daily use Item =2
+3.Clothes item =>1
+4.Utensils =>2
+5.Furniture=>1
+
+Price =>Add total amount and add it to cart
+
+Multiply price* Quantity =>Get the result using MRF approach
+
+20 minutes->
+Hint:MRF
+
+Amazoncart
+const  cart=[
+  {
+    product_name:'mobile phone',
+    quantity:1,
+    price:19999,
+    location:'anantapur'
+  },
+  {
+    product_name:'tooth paste',
+    quantity:2,
+    price:50,
+    location:'anantapur'
+  },
+  {
+    product_name:'pant',
+    quantity:1,
+    price:1500,
+    location:'anantapur'
+  },
+  {
+    product_name:'cooker',
+    quantity:2,
+    price:1999,
+    location:'anantapur'
+  },
+  {
+    product_name:'chair',
+    quantity:1,
+    price:1999,
+    location:'anantapur'
+  },
+]
+console.log(cart.map((x)=>x.quantity*x.price).reduce(function (current, next) {
+     return current + next; }));
+
+
+
+let shopping_cart =[
+    {pName:"iphone",quantity:1,price:50000,location:"bengaluru"},
+    {pName:"hairdrier",quantity:2,price:5000,location:"chennai"},
+    {pName:"jean",quantity:1,price:1000,location:"delhi"},
+    {pName:"stove",quantity:2,price:3000,location:"hyderabad"},
+    {pName:"sofaset",quantity:1,price:30000,location:"jaipur"}
+
+]
+
+let total = shopping_cart.reduce((a,b)=> a 
++b.price*b.quantity,0)
+console.log(total)
+
+
